@@ -198,15 +198,31 @@
       margin-top: -50%;
       width: 80%;
     }
+    &-charmander {
+      img {
+        width: 55%;
+      }
+    }
   }
 }
 
 .feature-section {
-  background-color: rgba($orange, 0.25);
+  background-color: rgba($yellow, 0.25);
   margin: 60px auto;
   margin-top: 10%;
   padding: 60px 30px;
   position: relative;
+  .feature-content {
+    margin-left: -10%;
+  }
+  h3 {
+    font-family: $header-font;
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 20px;
+  }
   .feature-image {
     img {
       position: absolute;

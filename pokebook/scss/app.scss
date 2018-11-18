@@ -1,8 +1,8 @@
 @charset 'utf-8';
 
-@import 'settings';
-@import 'foundation';
-@import 'motion-ui';
+@import "settings";
+@import "foundation";
+@import "motion-ui";
 
 // Global styles
 @include foundation-global-styles;
@@ -11,8 +11,8 @@
 
 // Grids (choose one)
 @include foundation-xy-grid-classes;
-// @include foundation-grid;
-// @include foundation-flex-grid;
+@include foundation-grid;
+@include foundation-flex-grid;
 
 // Generic components
 @include foundation-button;
@@ -62,3 +62,8 @@
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+@import "base/font";
+@import "base/elements";
+@import "base/main";
+@import "layout/components";

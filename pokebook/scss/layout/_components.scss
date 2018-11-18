@@ -1,0 +1,218 @@
+.pokedex-section {
+  cursor: pointer;
+  padding: 60px 30px;
+  position: relative;
+  .pokedex-section--front {
+    text-align: center;
+    width: 90%;
+  }
+  .pokedex-section--back {
+    background-color: rgba($white, 0.92);
+    height: 100%;
+    left: -100%;
+    display: flex;
+    flex-direction: row;
+    //justify-content: center;
+    align-items: center;
+    opacity: 0;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    width: calc(100vw - 30px);
+    transition: left 0.5s ease;
+    &.is-open {
+      left: 0;
+      opacity: 1;
+      z-index: 3;
+    }
+    .pokedex-search--form {
+      display: flex;
+      justify-content: center;
+      width: 48%;
+      label {
+        color: $dark-blue;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      input {
+        width: 300px;
+        height: 60px;
+        border: 0;
+        box-shadow: none;
+        border-bottom: 2px solid;
+        background-color: transparent;
+        font-size: 18px;
+      }
+      .search-btn {
+        margin: 0 auto;
+        margin-top: 30px;
+        opacity: 0.85;
+        width: 50px;
+        transform: scale(1, 1);
+        transition: all 0.3s ease;
+        &:hover {
+          opacity: 1;
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
+    .pokedex-search--result {
+      margin: 0 auto;
+      width: 50%;
+      &_card {
+        width: 50%;
+        min-width: 350px;
+        li {
+          list-style: none;
+          h1 {
+            text-transform: capitalize;
+          }
+        }
+        img {
+          margin-bottom: 20px;
+          transform: scale(1.2);
+        }
+      }
+    }
+    .search-close--btn {
+      color: $dark-blue;
+      cursor: pointer;
+      font-size: 52px;
+      font-family: $header-font;
+      position: absolute;
+      top: 30px;
+      right: 15%;
+    }
+  }
+}
+.pokedex-type--wrapper {
+  float: right;
+  padding-right: 3vw;
+  padding-top: 30px;
+  //width: 50vw;
+  // @include breakpoint(large) {
+  //   width: 65vw;
+  // }
+  // @include breakpoint(xlarge) {
+  //   width: 50vw;
+  // }
+}
+// .pokedex-type--wrapper {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+// }
+.pokedex-type--card {
+  border-radius: 12px;
+  height: 230px;
+  margin-bottom: 30px;
+  padding: 30px;
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
+  &.is--visible {
+    &::before {
+      opacity: 0.65;
+      transform: translateY(0);
+    }
+  }
+  &:before {
+    content: "";
+    background-color: $yellow;
+    border-radius: 50%;
+    height: 210px;
+    position: absolute;
+    right: 15%;
+    top: 0;
+    width: 210px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition-delay: 0.3s;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+  }
+  &:hover {
+    img {
+      transform: translateX(20px);
+    }
+  }
+  &.blue {
+    &:before {
+      background-color: $blue;
+    }
+  }
+  &.red {
+    &:before {
+      background-color: $red;
+    }
+  }
+  &.green {
+    &:before {
+      background-color: $green;
+    }
+  }
+  &.yellow {
+    &:before {
+      background-color: $yellow;
+    }
+  }
+  &.gray {
+    &:before {
+      background-color: $medium-gray;
+    }
+  }
+  &.type-fire {
+    img {
+      width: 55%;
+    }
+  }
+  &.type-pikachu {
+    img {
+      width: 70%;
+    }
+  }
+  img {
+    width: 65%;
+    position: relative;
+    z-index: 1;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+}
+
+.pokedex-type--modal {
+  padding: 60px 30px;
+  h1 {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .pokedex-type--card_dt {
+    background-color: $white;
+    border: 2px solid $blue;
+    border-radius: 12px;
+    margin-top: 35%;
+    padding: 30px 15px;
+    text-align: center;
+    img {
+      margin-bottom: 20px;
+      margin-top: -50%;
+      width: 80%;
+    }
+  }
+}
+
+.feature-section {
+  background-color: rgba($orange, 0.25);
+  margin: 60px auto;
+  margin-top: 10%;
+  padding: 60px 30px;
+  position: relative;
+  .feature-image {
+    img {
+      position: absolute;
+      left: 5%;
+      bottom: 0;
+      width: 300px;
+    }
+  }
+}

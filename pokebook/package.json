@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
+    "deploy": "aws s3 sync build/ s3://hackthon-pokemon-app",
     "build": "gulp sass"
   },
   "author": "ZURB <foundation@zurb.com>",
@@ -14,7 +15,9 @@
     "email": "foundation@zurb.com"
   },
   "dependencies": {
+    "browser-sync": "^2.26.3",
     "foundation-sites": "^6.5.1",
+    "gulp-load-plugins": "^1.5.0",
     "jquery": ">=3.0.0",
     "motion-ui": "~2.0.0",
     "what-input": "^5.1.2"
@@ -23,9 +26,12 @@
     "autoprefixer": "^9.1.5",
     "browser-sync": "^2.18.13",
     "gulp": "^4.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-load-plugins": "^1.1.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1"
   },
   "repository": {
     "type": "git",
